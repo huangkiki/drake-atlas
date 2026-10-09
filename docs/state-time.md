@@ -161,4 +161,4 @@ $$y^{dynamic}_{n+1}=g_d(s_{n+1}),\quad y^{kinematic}_{n+1}=g_k(x_{n+1}).$$
 
 </details>
 
-建议的源码追踪顺序：`Parser` → `Finalize` → `joint.position_start/velocity_start` → Plant 状态 setter → Context 失效通知 → `Simulator::Initialize/AdvanceTo` → Plant 的 sampled output 说明。此链解释建模/状态/时间；完整碰撞、约束装配、SAP 求解和力回写仍属 E3。返回[课程目录](curriculum.md)或[验证记录](evidence/e1-validation.md)。
+建议的源码追踪顺序：`Parser` → `Finalize` → `joint.position_start/velocity_start` → Plant 状态 setter → Context 失效通知 → `Simulator::Initialize/AdvanceTo` → Plant 的 sampled output 说明。此链解释建模/状态/时间；完整碰撞、约束装配、SAP 求解和力回写见已交付的[E3](contact-solvers.md)。返回[课程目录](curriculum.md)或[验证记录](evidence/e1-validation.md)。

@@ -32,7 +32,7 @@ Plant 的 time_step 控制离散或连续建模路径；本版本 C++ 与 Python
 
 力输入端口、驱动器、状态反馈与直接状态设置分别解释。控制器的计算时刻和输出保持方式应与 Plant/Simulator 的离散时序一起理解。优化和运动学工具不代表得到的轨迹自动满足某个动态接触模型。
 
-Drake 的 double、AutoDiff 和 symbolic 标量支持按组件与配置区分。本版本 SAP 对带约束的 AutoDiff 路径有限制，不能把总体自动微分能力写成所有接触仿真都可微。阅读相应函数的前置条件比只看模板类型更重要。
+Drake 的 double、AutoDiff 和 symbolic 标量支持按组件与配置区分。E3 核对了 SAP 的 AutoDiff 隐函数实现与旧注释之间的差异，见[可微边界](contact-solvers.md)；不能把内部梯度路径写成所有接触仿真都可微。阅读相应函数的前置条件比只看模板类型更重要。
 
 ## 6. 可视化与下一步
 
@@ -41,3 +41,5 @@ Drake 的 double、AutoDiff 和 symbolic 标量支持按组件与配置区分。
 阅读练习：画出 Plant、SceneGraph、控制器、Visualizer 的端口关系；指出每个状态由谁的 Context 保存；从一个接触参数追到 manager 与 SAP；说明选用的近似和不支持的标量路径。本仓源码学习不代表 DexLab Drake 运行资格已验收，完整课程见[路线](curriculum.md)。
 
 实验最终复用 [DexLab](https://github.com/huangkiki/Dexlab) 并保留原版本、配置和工况；当前不另建实验批次或评分器。
+
+完整接触专题：[几何与材料](contact-models.md) → [SAP、时间离散与终止](contact-solvers.md) → [力与采样](contact-observation.md)。

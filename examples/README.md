@@ -23,3 +23,7 @@ python -c "import ast; from pathlib import Path; ast.parse(Path('examples/model_
 | [task_sequencer.py](task_sequencer.py) | LeafSystem 周期事件与 Context 状态，接近/闭合/保持/释放/异常 | 未执行事件；force/slip 输入是假定合同，未实现传感 |
 
 这些文件不是统一仿真封装。两个 arm 示例共享一个具体教学模型的构建函数；任务例子独立说明 Systems 的状态/事件，不伪造机械臂轨迹或接触源。所有代码均只做完整 AST、源码 API 和资产静态检查，阈值/增益/周期只是教学数值。见[控制与机器人](../docs/control-robotics.md)、[任务接口](../docs/task-interfaces.md)、[E2 验证](../docs/evidence/e2-validation.md)。
+
+## E3：接触配置与原生字段读回
+
+[contact_inspection.py](contact_inspection.py) 明确配置原创 sphere/ground、point 与 hydro 材料、Lagged 近似和 sampled 输出。独立 reader 保留 point 的 B 侧力、hydro 的 A 侧 wrench、作用点、几何/刚体身份与 query time，不伪造物理 sample time。main 只包含建模步骤，不调用 reader；本轮连这些建模步骤也未执行，只做 AST、源码和球惯量静态检查。它不是接触实验或触觉传感器，详见[E3 验证](../docs/evidence/e3-validation.md)。

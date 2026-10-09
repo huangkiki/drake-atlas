@@ -238,6 +238,102 @@
     {
       "path": "systems/primitives/trajectory_source.h",
       "git_blob": "18fa848396b83964c974013487d78987acb461bf"
+    },
+    {
+      "path": "bindings/pydrake/geometry/geometry_py_scene_graph.cc",
+      "git_blob": "a5553089422d640ad21ceb732cb87ad709bc7ad0"
+    },
+    {
+      "path": "geometry/collision_filter_manager.h",
+      "git_blob": "e113e06f3f97229bca1b9ddaaaa01889c0f935c8"
+    },
+    {
+      "path": "geometry/proximity_properties.h",
+      "git_blob": "bf4954ebef39d473f5f7cdfd33e4f76a03e2b4b4"
+    },
+    {
+      "path": "geometry/query_object.h",
+      "git_blob": "93ec14cf016747ca7683ad4e014bf846b5c31b5e"
+    },
+    {
+      "path": "geometry/query_results/contact_surface.h",
+      "git_blob": "4690baac555c7c89af84a4bbb28eda4ed8d5ad2c"
+    },
+    {
+      "path": "geometry/query_results/penetration_as_point_pair.h",
+      "git_blob": "081ea5d9c5a72972f4ffa52e3c1ad6da659ee8d6"
+    },
+    {
+      "path": "multibody/contact_solvers/contact_solver_results.h",
+      "git_blob": "12fef2b03d6bc4e60f4413744ffa97a6b8483f4e"
+    },
+    {
+      "path": "multibody/contact_solvers/sap/contact_problem_graph.h",
+      "git_blob": "476a7d71e8b551ba40e78a0e47354ec4b1f3a694"
+    },
+    {
+      "path": "multibody/contact_solvers/sap/sap_contact_problem.h",
+      "git_blob": "8db9fad0d4c54043d73cba441eb30cdfadc0ce93"
+    },
+    {
+      "path": "multibody/contact_solvers/sap/sap_friction_cone_constraint.cc",
+      "git_blob": "ab93d5a21bbbb388d53eef73d3b1382cd660e6e1"
+    },
+    {
+      "path": "multibody/contact_solvers/sap/sap_friction_cone_constraint.h",
+      "git_blob": "792567baf16c4fe7f16664b6a7d2f4fb12ca1724"
+    },
+    {
+      "path": "multibody/contact_solvers/sap/sap_hunt_crossley_constraint.cc",
+      "git_blob": "326a61351d1e38c488a673f1e10737d4220fac9f"
+    },
+    {
+      "path": "multibody/contact_solvers/sap/sap_hunt_crossley_constraint.h",
+      "git_blob": "4eda02cb6f2b4a0ad06552bfc7eb1090c1bb5ca7"
+    },
+    {
+      "path": "multibody/contact_solvers/sap/sap_model.cc",
+      "git_blob": "a8f11f2a2b1bffa837f332a1ca4c8ff9e1f1f5e1"
+    },
+    {
+      "path": "multibody/contact_solvers/sap/sap_solver.cc",
+      "git_blob": "572ae28e0eba5bba4f15bbc08c0750514f4c095f"
+    },
+    {
+      "path": "multibody/plant/contact_properties.cc",
+      "git_blob": "10617d6537fc46b29ae834d2845a08a5c7971376"
+    },
+    {
+      "path": "multibody/plant/contact_results.h",
+      "git_blob": "17c6ae70c572e3eb001995e2f7ff55e14871f2c8"
+    },
+    {
+      "path": "multibody/plant/coulomb_friction.h",
+      "git_blob": "31e6822d26e929b5f959858de1c8b014f4c0d6c8"
+    },
+    {
+      "path": "multibody/plant/discrete_update_manager.cc",
+      "git_blob": "9dd829c1be62dc35552f373ee88e025d2da14d0d"
+    },
+    {
+      "path": "multibody/plant/hydroelastic_contact_info.h",
+      "git_blob": "a5ca5a3b9dbb50e98f600673d6076e384c04108c"
+    },
+    {
+      "path": "multibody/plant/hydroelastic_traction_calculator.cc",
+      "git_blob": "83e9e594f97827ecdc4f74cd39ea9f7c568e10a0"
+    },
+    {
+      "path": "multibody/plant/point_pair_contact_info.h",
+      "git_blob": "c8d9da2061b94eb0212fbfe3ae253e8ea5ee67ad"
+    },
+    {
+      "path": "bindings/pydrake/geometry/geometry_py_common.cc",
+      "git_blob": "6462bcbf230308c48017e74559957f2d10b27a06"
+    },
+    {
+      "path": "bindings/pydrake/geometry/geometry_py_hydro.cc",
+      "git_blob": "b1329d880ffa96a82619dc70fa51db6ae7208a9b"
     }
   ]
 }

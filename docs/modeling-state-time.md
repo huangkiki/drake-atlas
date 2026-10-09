@@ -160,4 +160,4 @@ $$I_{BP}^{E}=I_{BBcm}^{E}+m((c^{T}c)I_3-cc^{T}).$$
 
 </details>
 
-下一页：[状态、Context 与时间](state-time.md)。后续 E2 接驱动/机器人，E3 解释约束、接触与数值求解；本课没有把这些待完成内容算作 B0/B4 全部完成。
+下一页：[状态、Context 与时间](state-time.md)。后续 E2 接驱动/机器人，E3 解释约束、接触与数值求解；本课本身只覆盖 B0/B4 基础；现可继续读[E3 动力学与求解](contact-solvers.md)。

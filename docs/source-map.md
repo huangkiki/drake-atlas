@@ -79,3 +79,34 @@
 | [common/trajectories/piecewise_polynomial.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/common/trajectories/piecewise_polynomial.h) | 三次路径插值、样本列和端点导数 |
 | [systems/primitives/trajectory_source.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/primitives/trajectory_source.cc) | Context 时间求值、堆叠顺序及区间外导数 |
 | [systems/primitives/trajectory_source.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/primitives/trajectory_source.h) | 轨迹输出阶数与 System 所有权 |
+
+## E3：接触、求解与力观测
+
+阅读链：[材料与几何](contact-models.md) → [求解与时间](contact-solvers.md) → [力与采样](contact-observation.md)。已存在的 Plant/SapDriver/SAP 参数源码继续复用；新增入口如下。
+
+| 固定源文件 | 本轮核对目的 |
+|---|---|
+| [bindings/pydrake/geometry/geometry_py_scene_graph.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/bindings/pydrake/geometry/geometry_py_scene_graph.cc) | Python surface/normal/inspector 字段 |
+| [geometry/collision_filter_manager.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/geometry/collision_filter_manager.h) | 候选对、固有排除与模型/Context manager 生命周期 |
+| [geometry/proximity_properties.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/geometry/proximity_properties.h) | 材料属性与 rigid/compliant hydroelastic 构造参数 |
+| [geometry/query_object.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/geometry/query_object.h) | hydro 支持对、网格、fallback 与 scalar 边界 |
+| [geometry/query_results/contact_surface.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/geometry/query_results/contact_surface.h) | surface 身份、world 网格与弹性压力场 |
+| [geometry/query_results/penetration_as_point_pair.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/geometry/query_results/penetration_as_point_pair.h) | 见证点、穿透与 B→A 法向 |
+| [multibody/contact_solvers/contact_solver_results.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/contact_solvers/contact_solver_results.h) | 内部力/速度/广义量，核对 ft 遗留注释 |
+| [multibody/contact_solvers/sap/contact_problem_graph.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/contact_solvers/sap/contact_problem_graph.h) | clique、cluster 和参与图的范围 |
+| [multibody/contact_solvers/sap/sap_contact_problem.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/contact_solvers/sap/sap_contact_problem.h) | 线性化动量、A、v* 与 clique |
+| [multibody/contact_solvers/sap/sap_friction_cone_constraint.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/contact_solvers/sap/sap_friction_cone_constraint.cc) | R、near-rigid 下界及摩擦锥投影 |
+| [multibody/contact_solvers/sap/sap_friction_cone_constraint.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/contact_solvers/sap/sap_friction_cone_constraint.h) | 线性柔顺、relaxation time 与正则化 |
+| [multibody/contact_solvers/sap/sap_hunt_crossley_constraint.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/contact_solvers/sap/sap_hunt_crossley_constraint.cc) | Similar/Lagged 的 n0、z、cost 与 impulse |
+| [multibody/contact_solvers/sap/sap_hunt_crossley_constraint.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/contact_solvers/sap/sap_hunt_crossley_constraint.h) | Hunt–Crossley 近似与参数量纲 |
+| [multibody/contact_solvers/sap/sap_model.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/contact_solvers/sap/sap_model.cc) | cost/gradient/Hessian、负平方根缩放 |
+| [multibody/contact_solvers/sap/sap_solver.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/contact_solvers/sap/sap_solver.cc) | Newton/线搜索、实际终止与 AutoDiff 隐函数路径 |
+| [multibody/plant/contact_properties.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/plant/contact_properties.cc) | 刚度/耗散/relaxation time/动态摩擦的实际组合 |
+| [multibody/plant/contact_results.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/plant/contact_results.h) | point/hydro/deformable 结果集合 |
+| [multibody/plant/coulomb_friction.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/plant/coulomb_friction.h) | 静态与动态摩擦的调和平均 |
+| [multibody/plant/discrete_update_manager.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/plant/discrete_update_manager.cc) | 接触装配、面心求积、力读回与 q 更新 |
+| [multibody/plant/hydroelastic_contact_info.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/plant/hydroelastic_contact_info.h) | A 侧 centroid wrench 与 surface 所有权 |
+| [multibody/plant/hydroelastic_traction_calculator.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/plant/hydroelastic_traction_calculator.cc) | 连续 hydro traction、atan 摩擦与面积积分 |
+| [multibody/plant/point_pair_contact_info.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/plant/point_pair_contact_info.h) | B 侧力、点、分离与 slip speed |
+| [bindings/pydrake/geometry/geometry_py_common.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/bindings/pydrake/geometry/geometry_py_common.cc) | Python 材料/geometry property 接口 |
+| [bindings/pydrake/geometry/geometry_py_hydro.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/bindings/pydrake/geometry/geometry_py_hydro.cc) | Python hydroelastic 属性重载 |
