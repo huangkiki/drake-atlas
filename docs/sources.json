@@ -1,0 +1,55 @@
+{
+  "upstream": "RobotLocomotion/drake",
+  "commit": "1e1466ba466e7ce8fa9fcca4e086ce1383e5427d",
+  "scope": "source study; no simulation experiments or performance claims",
+  "files": [
+    {
+      "path": "multibody/plant/multibody_plant.h",
+      "git_blob": "418ce1c7550efe8e39fefc48caf3611da7091ecc"
+    },
+    {
+      "path": "multibody/plant/multibody_plant_config.h",
+      "git_blob": "8ec4098fcf3b441c17a8c48c21a7e3f93a78940c"
+    },
+    {
+      "path": "multibody/plant/multibody_plant.cc",
+      "git_blob": "fe7fc0aad926b431fb6697512bb900a01a30d799"
+    },
+    {
+      "path": "multibody/plant/compliant_contact_manager.cc",
+      "git_blob": "9b68919ae65bc45eabdab20943b0bb5eb5acf262"
+    },
+    {
+      "path": "multibody/plant/contact_model_doxygen.h",
+      "git_blob": "16a8931c4255c4fd514f3eb77959d53822116207"
+    },
+    {
+      "path": "multibody/contact_solvers/sap/sap_solver.h",
+      "git_blob": "a204906a4a54981e4d17afcece5572eaf3a81007"
+    },
+    {
+      "path": "systems/framework/context.h",
+      "git_blob": "ac606c81b6f274a8bb8859f642bcb73a62c8a547"
+    },
+    {
+      "path": "systems/framework/diagram.h",
+      "git_blob": "78146e694980288d4884de9fb648850fa5581033"
+    },
+    {
+      "path": "systems/analysis/simulator.h",
+      "git_blob": "252adfcb1fb2b7966833125df03eb3b3dcf42d19"
+    },
+    {
+      "path": "geometry/scene_graph.h",
+      "git_blob": "ef468c5405f2cc023f7a05a4940bb14f119260c8"
+    },
+    {
+      "path": "multibody/parsing/parser.h",
+      "git_blob": "829f66c5d8f48cb15228182b544445ede3499ca1"
+    },
+    {
+      "path": "geometry/meshcat_visualizer.h",
+      "git_blob": "dad58850841aa1959af5beb787a478ac93ef4db0"
+    }
+  ]
+}

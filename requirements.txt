@@ -1,0 +1,2 @@
+# Candidate engine packages for later API lessons; not a validated environment lock.
+drake==1.57.0
