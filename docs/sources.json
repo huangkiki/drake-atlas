@@ -490,6 +490,86 @@
     {
       "path": "systems/sensors/sim_rgbd_sensor.cc",
       "git_blob": "2bd057653f72d35f0eecbc6a2a25d9a1900c3e1e"
+    },
+    {
+      "path": "bindings/pydrake/common/default_scalars_pybind.h",
+      "git_blob": "1def3ed8eaa5dc7e941ea946591b3d963fbb49c6"
+    },
+    {
+      "path": "bindings/pydrake/gym/_drake_gym_env.py",
+      "git_blob": "8a335c94a426ad8466169795547a295b38683d0e"
+    },
+    {
+      "path": "bindings/pydrake/systems/analysis_py.cc",
+      "git_blob": "53d543920c002ea002571257aa2162f2581b7c19"
+    },
+    {
+      "path": "common/parallelism.h",
+      "git_blob": "0a04aa4e9a4a1098664c714f08019c5da6f07957"
+    },
+    {
+      "path": "common/random.h",
+      "git_blob": "3dcd503bf4036a2a15c0e61ecababecaa4579b32"
+    },
+    {
+      "path": "common/trajectories/discrete_time_trajectory.h",
+      "git_blob": "f16560d2508a07ce53bc3801526ec015a8031cf3"
+    },
+    {
+      "path": "multibody/tree/revolute_joint.h",
+      "git_blob": "527144c59f4fc1a8d754581053978c51558028fc"
+    },
+    {
+      "path": "multibody/tree/rigid_body.h",
+      "git_blob": "f4b1a0ba054496164a8ccaa6a2af8e6e6e4a37ed"
+    },
+    {
+      "path": "systems/analysis/monte_carlo.cc",
+      "git_blob": "a542250bcd87819d4a5824aa0b3dfda57733a4bb"
+    },
+    {
+      "path": "systems/analysis/monte_carlo.h",
+      "git_blob": "ae4ec56eeccb68fbedaa59b42b8ccd8be1c37b16"
+    },
+    {
+      "path": "systems/analysis/simulator.cc",
+      "git_blob": "012237eea51651711fbf4d9feceb12232a39776c"
+    },
+    {
+      "path": "systems/framework/context_base.cc",
+      "git_blob": "8f0b086d623df7bfe50990189fc7b767ed638bbc"
+    },
+    {
+      "path": "systems/primitives/random_source.cc",
+      "git_blob": "f2e2e033f20f43fb68a16c57fae171196a1f844a"
+    },
+    {
+      "path": "systems/primitives/random_source.h",
+      "git_blob": "cb30498f536aa0f314b7657ac2ad98a3adff2d2c"
+    },
+    {
+      "path": "systems/primitives/vector_log.cc",
+      "git_blob": "ff74822d4dff14a71c2bc7386271a31c30f6f951"
+    },
+    {
+      "path": "systems/primitives/vector_log.h",
+      "git_blob": "9ba027d839df34a8eacc62f671fa18834a264002"
+    },
+    {
+      "path": "systems/primitives/vector_log_sink.cc",
+      "git_blob": "3d54f225ee562e1885bd5dab008113438e4278b4"
+    },
+    {
+      "path": "systems/primitives/vector_log_sink.h",
+      "git_blob": "8d08060a27e5c9a37c9a256a76bb7fe3554ad374"
+    },
+    {
+      "path": "bindings/pydrake/common/module_py.cc",
+      "git_blob": "6b5c25cce604974921fa225521d36f031da1218e"
+    },
+    {
+      "path": "common/trajectories/piecewise_polynomial.cc",
+      "git_blob": "c946278ec7ef1a7218a8f08f1a9d7f4d224854f1"
     }
   ]
 }

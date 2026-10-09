@@ -156,3 +156,30 @@
 | [systems/sensors/rotary_encoders.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/sensors/rotary_encoders.cc) | offset、floor 量化与参数 |
 | [systems/sensors/rotary_encoders.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/sensors/rotary_encoders.h) | rad、选择/量化、采样边界 |
 | [systems/sensors/sim_rgbd_sensor.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/sensors/sim_rgbd_sensor.cc) | 连续 sensor 与消息发布原生接线 |
+
+## E5：环境隔离、随机化与数据所有权
+
+固定源码下从 Context/Simulator 到学习端口、随机事件、记录器与回放的完整链。复用既有 simulator.h、context.h、leaf_system.h、framework_py_semantics.cc、primitives_py.cc 等登记；只完成源码与静态验收，未运行批量、学习或数据回放。新增引用如下：
+
+| 固定文件 | 阅读目的 |
+|---|---|
+| [bindings/pydrake/common/default_scalars_pybind.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/bindings/pydrake/common/default_scalars_pybind.h) | double 引用与其他标量复制策略 |
+| [bindings/pydrake/gym/_drake_gym_env.py](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/bindings/pydrake/gym/_drake_gym_env.py) | 原生学习端口、step 异常与 reset/handler/render 差异 |
+| [bindings/pydrake/systems/analysis_py.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/bindings/pydrake/systems/analysis_py.cc) | Simulator Context 共享、GIL 与串行 MonteCarlo |
+| [common/parallelism.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/common/parallelism.h) | 线程配置、默认串行和最大值锁存 |
+| [common/random.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/common/random.h) | MT19937 RNG、复制与原生分布单位 |
+| [common/trajectories/discrete_time_trajectory.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/common/trajectories/discrete_time_trajectory.h) | 离散时刻定义域、容差和 ZOH 语义 |
+| [multibody/tree/revolute_joint.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/tree/revolute_joint.h) | 原生关节角随机分布 |
+| [multibody/tree/rigid_body.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/tree/rigid_body.h) | Context 质量/COM/空间惯量参数 |
+| [systems/analysis/monte_carlo.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/analysis/monte_carlo.cc) | 主线程初始化、worker 推进和索引结果 |
+| [systems/analysis/monte_carlo.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/analysis/monte_carlo.h) | factory/output、RNG snapshot 与并行合同 |
+| [systems/analysis/simulator.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/analysis/simulator.cc) | 时间回退校验、Context 替换与统计重置实现 |
+| [systems/framework/context_base.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/framework/context_base.cc) | 根 Context clone 与依赖指针修复 |
+| [systems/primitives/random_source.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/primitives/random_source.cc) | 离散/abstract RNG 状态、事件和随机输入接线 |
+| [systems/primitives/random_source.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/primitives/random_source.h) | 实例 seed、固定 seed 与采样保持 |
+| [systems/primitives/vector_log.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/primitives/vector_log.cc) | Reserve、扩容与样本追加 |
+| [systems/primitives/vector_log.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/primitives/vector_log.h) | 矩阵方向、容量、Clear 和时间值限制 |
+| [systems/primitives/vector_log_sink.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/primitives/vector_log_sink.cc) | nothing_ticket 缓存、发布事件与时间戳 |
+| [systems/primitives/vector_log_sink.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/primitives/vector_log_sink.h) | logger trigger、根/子 Context 与日志非状态性 |
+| [bindings/pydrake/common/module_py.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/bindings/pydrake/common/module_py.cc) | Python RNG 构造与分布枚举 |
+| [common/trajectories/piecewise_polynomial.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/common/trajectories/piecewise_polynomial.cc) | ZOH 忽略末样本、value 时间 clamp 的实际实现 |

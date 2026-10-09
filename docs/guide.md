@@ -45,3 +45,5 @@ Drake 的 double、AutoDiff 和 symbolic 标量支持按组件与配置区分。
 完整接触专题：[几何与材料](contact-models.md) → [SAP、时间离散与终止](contact-solvers.md) → [力与采样](contact-observation.md)。
 
 E4 继续追踪[相机、图像与渲染](sensors-rendering.md)、[采样、延迟与所有权](sensor-timing.md)和[惯性/编码器/力观测](inertial-force-sensing.md)。显示事件与物理步进、图像深度与射线距离、加速度与比力分别解释；保持固定源码及未运行边界。
+
+E5 将这些系统组成[独立环境与执行生命周期](batch-lifecycle.md)，再解释[随机化、MonteCarlo 与官方学习接口](randomness-learning.md)及[数据记录/回放](data-replay.md)。Context 隔离、线程、RNG、日志缓存和 GPU 边界各自核对固定实现，不能从多实例或学习接口名称推断性能与训练能力。

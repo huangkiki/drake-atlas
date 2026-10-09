@@ -31,3 +31,7 @@ python -c "import ast; from pathlib import Path; ast.parse(Path('examples/model_
 ## E4：相机的显式采样与时标
 
 [sampled_camera.py](sampled_camera.py) 使用原创锚定球体、SceneGraph perception role、命名 VTK renderer、RGB-D 相机和三个原生 ZeroOrderHold，仅保持 depth32F、X_WB 与正确连接的 capture_time。固定版本的 RgbdSensorDiscrete 时间端口导出差异见[时序篇](../docs/sensor-timing.md)。函数未执行；甚至 renderer 构造、Diagram 构建和 Context 创建都没有运行，不存在输出图片。初始 ZOH 零值不是已经捕获的图像；需要将来有授权的事件执行才产生样本。相机 body 与 depth frame 在该例中重合，移动/偏置相机需另外核对捕获时外参。[E4 验证](../docs/evidence/e4-validation.md)。
+
+## E5：独立 Context、随机流与日志副本
+
+[isolated_records.py](isolated_records.py) 声明一个 RandomSource → periodic-only VectorLogSink 的原生 Diagram，为两份独立 Context 显式设置不同 Drake RNG，并各配一个 Simulator。替换回合函数分配新 Context；日志读取函数复制 host 数组。没有自动调用入口，没有物理模型或 Gym 封装，未 Initialize/AdvanceTo，连建图与随机状态设置也未执行。构建完成不代表已经产生周期日志；初态样本、t=0 更新和后续 logger 事件分别解释，见[生命周期](../docs/batch-lifecycle.md)、[随机化](../docs/randomness-learning.md)、[数据](../docs/data-replay.md)及[E5 验证](../docs/evidence/e5-validation.md)。
