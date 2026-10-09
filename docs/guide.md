@@ -16,7 +16,7 @@ Finalize 是模型拓扑构建的重要边界；建模、端口连接、Context 
 
 ## 3. 连续与离散不是显示选项
 
-Plant 的 time_step 控制离散或连续建模路径，不能把构造器的默认值与 [MultibodyPlantConfig](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/plant/multibody_plant_config.h) 的配置默认值混为一个规则。教程应显式说明所用构造入口和 time_step。
+Plant 的 time_step 控制离散或连续建模路径；本版本 C++ 与 Python 构造器均要求显式传值，只有 [MultibodyPlantConfig](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/plant/multibody_plant_config.h) 提供 0.001 s 的默认配置。教程应显式说明所用构造入口和 time_step，详见[E1 状态与时间](state-time.md)。
 
 连续动力学通常从加速度层解释；离散接触从时间步内的速度更新与约束问题解释。Simulator 的推进目标时间不等同于所有系统使用同一内部积分步长，离散更新与连续积分也要分开。
 

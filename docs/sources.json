@@ -50,6 +50,86 @@
     {
       "path": "geometry/meshcat_visualizer.h",
       "git_blob": "dad58850841aa1959af5beb787a478ac93ef4db0"
+    },
+    {
+      "path": "bindings/pydrake/math/math_py_monolith.cc",
+      "git_blob": "94b01d3404b41658061e3f69f74e34a42467656f"
+    },
+    {
+      "path": "bindings/pydrake/multibody/math_py.cc",
+      "git_blob": "4395779aac1bb1350535738c1292afd3aa167bbc"
+    },
+    {
+      "path": "bindings/pydrake/multibody/parsing_py.cc",
+      "git_blob": "37c824b56ffe10331900c85a2fa197a7d7046310"
+    },
+    {
+      "path": "bindings/pydrake/multibody/plant_py.cc",
+      "git_blob": "84e390266bed13cca802c93d6b479dd5dcd3886c"
+    },
+    {
+      "path": "bindings/pydrake/systems/framework_py_semantics.cc",
+      "git_blob": "fc663a93d467b7f60a15bbc470b46e565677950f"
+    },
+    {
+      "path": "bindings/pydrake/systems/framework_py_systems.cc",
+      "git_blob": "386d2031c79237f43f09f177e32a204533ee5523"
+    },
+    {
+      "path": "common/value.h",
+      "git_blob": "6ae43a4ac5b77ac8b293ae2206da0cc89273435d"
+    },
+    {
+      "path": "math/rigid_transform.h",
+      "git_blob": "13e2a97774884c9c75968ac01f8a8a6a0327f475"
+    },
+    {
+      "path": "multibody/math/spatial_force.h",
+      "git_blob": "21e81c17987e3a21a0a87abbb4d56706c081cc83"
+    },
+    {
+      "path": "multibody/math/spatial_velocity.h",
+      "git_blob": "9b28143246339779e6d99ac4331537b713119528"
+    },
+    {
+      "path": "multibody/parsing/package_map.h",
+      "git_blob": "47444bf310ba0fed684c8eb2e9b9c1a644361c65"
+    },
+    {
+      "path": "multibody/tree/joint.h",
+      "git_blob": "833f5c2eb6d790f369a27c95df964486ed941c9d"
+    },
+    {
+      "path": "multibody/tree/multibody_tree.cc",
+      "git_blob": "fbc2489f8700b4def73c80b2289e920406ba8121"
+    },
+    {
+      "path": "multibody/tree/quaternion_floating_joint.h",
+      "git_blob": "2de1944d1e57843112f7cb9ebce444a5b91104e1"
+    },
+    {
+      "path": "multibody/tree/spatial_inertia.h",
+      "git_blob": "7b765c1ad729e5c718b94df7624e078ce5b48efe"
+    },
+    {
+      "path": "systems/analysis/integrator_base.h",
+      "git_blob": "c000b4e1307166d1b29a4146f3c5e8922b2b1cb2"
+    },
+    {
+      "path": "systems/framework/context_base.h",
+      "git_blob": "401f3c33d3498f5b8b8b49332898e8fdc8774a9b"
+    },
+    {
+      "path": "systems/framework/diagram_builder.h",
+      "git_blob": "639e2c5c35e5ae3cb9c4a651bcc989905576a5b7"
+    },
+    {
+      "path": "systems/framework/system.cc",
+      "git_blob": "f38429c65552eee111ec37bbd769da43e283fd55"
+    },
+    {
+      "path": "systems/framework/system.h",
+      "git_blob": "33e76a3da565e9f8c4797a59d48a7a97af062ceb"
     }
   ]
 }
