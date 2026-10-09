@@ -22,8 +22,8 @@
 | B3 | 求解器与线性代数 | 目标/方程、残差、迭代、线性求解、warm start、岛与终止条件 | [E3 已交付](contact-solvers.md)，未运行 |
 | B4 | 积分与数值语义 | 积分器/solver/子步的区别、精度、容差、稳定性假设及可微限制 | [E1 时间](state-time.md) + [E3 数值与可微边界](contact-solvers.md)，未运行 |
 | B5 | 力与冲量观测 | 广义/空间/约束量、坐标转换、平均力、采样时刻与近似 | [E3 已交付](contact-observation.md)，未运行 |
-| B6 | 性能、并行与扩展 | 编译/JIT/步进/拷贝/渲染边界、插件/回调、线程与扩展接口 | [E5 系统层合同](batch-lifecycle.md)，含原生 callback、并行、数据成本和 GPU 边界；具体特色扩展留 E6，未运行 |
-| B7 | 源码综合导读 | 从模型字段到控制/接触/求解/观测的完整追踪、限制及 DexLab 证据索引 | 专题待开发 |
+| B6 | 性能、并行与扩展 | 编译/JIT/步进/拷贝/渲染边界、插件/回调、线程与扩展接口 | [E5 系统层合同](batch-lifecycle.md) + [E6 原生扩展](systems-extensions.md)与[标量边界](scalar-capabilities.md)，未运行 |
+| B7 | 源码综合导读 | 从模型字段到控制/接触/求解/观测的完整追踪、限制及 DexLab 证据索引 | [E6 综合源码链](engine-boundaries.md)已交付；E7 审校及 DexLab 复用入口待完成 |
 
 本引擎特别关注：Systems/Diagram/Context、MultibodyPlant、SceneGraph、SAP、控制与优化。各课需提供先修、概念/公式、原生接口与固定源码、易错点、阅读练习和适用边界。实验不作为本阶段先决条件；后续复用 DexLab，避免重新建设一套评分和基准系统。
 
@@ -36,3 +36,5 @@ E3 已交付 A4、B1–B5 及 B0 装配基础，包含 22 道练习与原生配�
 E4 完成 A6：RGB-D/label/点云、QueryObject 与 renderer、三种相机时间模型、Meshcat/headless、Accelerometer/Gyroscope/RotaryEncoders，以及力/触觉边界，含 21 道有答案练习。射线与触觉明确说明当前原生链提供什么、缺少哪些硬件模型；没有用历史 API、消息类型或压力截图代替实现。示例只做静态检查。[E4 证据](evidence/e4-validation.md)。
 
 E5 完成 A8/A9 与 B6 系统层讲解，包含 21 道有答案练习和独立 Context/日志的原生阅读例子。固定 Python MonteCarlo 串行、Gym handler/reset/render 差异、vector Eval 副本、日志 cache 与采样时间逐项对照实现；没有将源码能力变为 GPU 物理、训练吞吐或 sim-to-real 验收。[E5 证据](evidence/e5-validation.md)。
+
+E6 完成 B6 具体扩展与 B7 综合源码追踪：原生 LeafSystem/TemplateSystem、依赖与标量转换、几何/SAP/FEM 的 AD/symbolic 边界、优化前置条件及原生力模型。三篇含 21 道有答案练习；原创一阶滞后例子只做 AST 与绑定核对。MPM 内部目录不当作公开仿真入口；非空柔性模型不当作可微 Plant。[E6 证据](evidence/e6-validation.md)。E7 尚需对双路线全文审校并整理 DexLab 入口，A0 安装/环境专题的剩余范围也须明确收口。

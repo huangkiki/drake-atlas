@@ -35,3 +35,7 @@ python -c "import ast; from pathlib import Path; ast.parse(Path('examples/model_
 ## E5：独立 Context、随机流与日志副本
 
 [isolated_records.py](isolated_records.py) 声明一个 RandomSource → periodic-only VectorLogSink 的原生 Diagram，为两份独立 Context 显式设置不同 Drake RNG，并各配一个 Simulator。替换回合函数分配新 Context；日志读取函数复制 host 数组。没有自动调用入口，没有物理模型或 Gym 封装，未 Initialize/AdvanceTo，连建图与随机状态设置也未执行。构建完成不代表已经产生周期日志；初态样本、t=0 更新和后续 logger 事件分别解释，见[生命周期](../docs/batch-lifecycle.md)、[随机化](../docs/randomness-learning.md)、[数据](../docs/data-replay.md)及[E5 验证](../docs/evidence/e5-validation.md)。
+
+## E6：保留标量和依赖的一阶滞后系统
+
+[scalar_lag.py](scalar_lag.py) 使用原生 TemplateSystem 和 LeafSystem_[T]，声明一维输入、连续状态及 state-only 输出，给出 converter/copy 契约。未调用的局部 AD 函数只播种 x；tau=0.05 s 是固定配置，u 为常量。xdot=6 m/s 与对 x 的导数 −20 s⁻¹ 来自教学解析式，未由引擎计算。模块没有顶层实例构造，但 import 仍会注册装饰器，所以本轮仅 AST 解析，未 import、转换、求值、仿真或优化。见[原生扩展](../docs/systems-extensions.md)、[标量边界](../docs/scalar-capabilities.md)及[E6 验证](../docs/evidence/e6-validation.md)。

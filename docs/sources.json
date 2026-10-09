@@ -570,6 +570,130 @@
     {
       "path": "common/trajectories/piecewise_polynomial.cc",
       "git_blob": "c946278ec7ef1a7218a8f08f1a9d7f4d224854f1"
+    },
+    {
+      "path": "bindings/pydrake/autodiffutils/autodiffutils_py_everything.cc",
+      "git_blob": "dd8b1fd9ecd7074bcd8d6b0d51f7e181c09351e3"
+    },
+    {
+      "path": "bindings/pydrake/multibody/fem_py.cc",
+      "git_blob": "241876920161c1183d6f64cde1694987c859504e"
+    },
+    {
+      "path": "bindings/pydrake/systems/scalar_conversion.py",
+      "git_blob": "e5452e2c41de9caaffbd257da0eb2a6d527d589f"
+    },
+    {
+      "path": "common/ad/auto_diff.h",
+      "git_blob": "15c37a42470fc9e7f45051e97e7d9ba4f878ed0d"
+    },
+    {
+      "path": "common/autodiff.h",
+      "git_blob": "79bdb68ed6c94597f7ac61beee4d2e1b12fae7c3"
+    },
+    {
+      "path": "geometry/optimization/graph_of_convex_sets.h",
+      "git_blob": "0ef900f706232c12d2a53f73f890547fd23f5d55"
+    },
+    {
+      "path": "math/autodiff.h",
+      "git_blob": "ccaea6dd699db57cc539fb3be13b6c3ea63eea89"
+    },
+    {
+      "path": "multibody/fem/damping_model.cc",
+      "git_blob": "b1a497f53b18d4d5b57039b8f33b62b8987e283c"
+    },
+    {
+      "path": "multibody/fem/damping_model.h",
+      "git_blob": "ab3fe4a8d58902c7de2dc397bdeb05f59b6ccad8"
+    },
+    {
+      "path": "multibody/fem/deformable_body_config.h",
+      "git_blob": "cddbb1ef24da50ee6c269102c0c82409c6db6ccc"
+    },
+    {
+      "path": "multibody/mpm/BUILD.bazel",
+      "git_blob": "3a03db77a12265116468b0274ffaccd74c75c4be"
+    },
+    {
+      "path": "multibody/mpm/mpm_model.h",
+      "git_blob": "380887734c368a6bd92a3590f3c23c995da5f0e1"
+    },
+    {
+      "path": "multibody/plant/deformable_driver.cc",
+      "git_blob": "47acc6bac18bef71a03df1fb27ceab45b9b02966"
+    },
+    {
+      "path": "multibody/plant/deformable_model.cc",
+      "git_blob": "b551c83724097dfab9b0d70679c0a20045fb19ce"
+    },
+    {
+      "path": "multibody/plant/deformable_model.h",
+      "git_blob": "3634086b74d9fc1f230d71f63243809f940f917a"
+    },
+    {
+      "path": "multibody/plant/propeller.h",
+      "git_blob": "c054283849f8489645da99ac417b11517ecbfd9b"
+    },
+    {
+      "path": "multibody/plant/wing.h",
+      "git_blob": "c4329f7a37bee762ad8765b00792f33ce3d7556d"
+    },
+    {
+      "path": "multibody/tree/deformable_body.cc",
+      "git_blob": "fefc690587022360a2a39fd652d5dfdf32acb11a"
+    },
+    {
+      "path": "multibody/tree/force_density_field.h",
+      "git_blob": "4bc225e05ba41ed9c12f24831940fe9c47617a52"
+    },
+    {
+      "path": "multibody/tree/force_element.h",
+      "git_blob": "14cb9c0604526cbc0a7f2db021100df7bb5e2f57"
+    },
+    {
+      "path": "planning/trajectory_optimization/direct_collocation.cc",
+      "git_blob": "6c83801419b6e6779f70cae27fc78a38134b94fa"
+    },
+    {
+      "path": "planning/trajectory_optimization/direct_collocation.h",
+      "git_blob": "380965f568db959f3740cbb77757aaaa5b74a40d"
+    },
+    {
+      "path": "planning/trajectory_optimization/direct_transcription.h",
+      "git_blob": "70381de50a80674c1b915191fa10fdcc6aecb64c"
+    },
+    {
+      "path": "planning/trajectory_optimization/kinematic_trajectory_optimization.h",
+      "git_blob": "77df20b8a1b77f9b426d16a5095271cc83640ec4"
+    },
+    {
+      "path": "solvers/mathematical_program_doxygen.h",
+      "git_blob": "e88fec42c582d31b4f079ea44314c9e07514b76e"
+    },
+    {
+      "path": "solvers/solve.h",
+      "git_blob": "69fe8611e25a8ebda5b59288b42da2341535f704"
+    },
+    {
+      "path": "solvers/solver_interface.h",
+      "git_blob": "0ef8457ccaf01b3852bef995b96a01f30c148ed7"
+    },
+    {
+      "path": "systems/framework/diagram.cc",
+      "git_blob": "7f6067e7602483b640ff33f983d08f9fbb90c000"
+    },
+    {
+      "path": "systems/framework/scalar_conversion_traits.h",
+      "git_blob": "d2c4d97ea22979fda10489b84b8bbdcb849393f7"
+    },
+    {
+      "path": "systems/framework/system_scalar_conversion_doxygen.h",
+      "git_blob": "4bc0fee63b4f9622920d79b079bf041e9273aaa3"
+    },
+    {
+      "path": "systems/primitives/multilayer_perceptron.h",
+      "git_blob": "8cc19fb29d28bbdf7caf8baff57aa118fafc9d32"
     }
   ]
 }

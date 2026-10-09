@@ -183,3 +183,41 @@
 | [systems/primitives/vector_log_sink.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/primitives/vector_log_sink.h) | logger trigger、根/子 Context 与日志非状态性 |
 | [bindings/pydrake/common/module_py.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/bindings/pydrake/common/module_py.cc) | Python RNG 构造与分布枚举 |
 | [common/trajectories/piecewise_polynomial.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/common/trajectories/piecewise_polynomial.cc) | ZOH 忽略末样本、value 时间 clamp 的实际实现 |
+
+## E6：原生扩展、标量与特色能力
+
+专题：[System 扩展](systems-extensions.md) → [标量与可微限制](scalar-capabilities.md) → [优化/FEM/综合源码链](engine-boundaries.md)。复用既有 Plant、SceneGraph/QueryObject、SAP、LeafSystem、System、Python Systems/Plant 绑定；下表为本轮新增固定文件。只有源码与静态验收，没有 AD、优化或柔性体运行。
+
+| 固定文件 | 阅读目的 |
+|---|---|
+| [bindings/pydrake/autodiffutils/autodiffutils_py_everything.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/bindings/pydrake/autodiffutils/autodiffutils_py_everything.cc) | AD 播种、值与梯度提取的原生 Python 绑定 |
+| [bindings/pydrake/multibody/fem_py.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/bindings/pydrake/multibody/fem_py.cc) | FEM 材料枚举与配置的实际 Python setter/getter |
+| [bindings/pydrake/systems/scalar_conversion.py](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/bindings/pydrake/systems/scalar_conversion.py) | TemplateSystem 构造、copy 和 converter 注册契约 |
+| [common/ad/auto_diff.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/common/ad/auto_diff.h) | 当前 Drake AD 的数值、动态偏导和常量语义 |
+| [common/autodiff.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/common/autodiff.h) | AutoDiffXd 当前别名身份 |
+| [geometry/optimization/graph_of_convex_sets.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/geometry/optimization/graph_of_convex_sets.h) | GCS 凸松弛、rounding 及最优性边界 |
+| [math/autodiff.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/math/autodiff.h) | 导数播种顺序和矩阵展开 |
+| [multibody/fem/damping_model.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/fem/damping_model.cc) | 下游 Rayleigh damping 实际入参非负检查 |
+| [multibody/fem/damping_model.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/fem/damping_model.h) | 质量/刚度阻尼、单位和模态阻尼比 |
+| [multibody/fem/deformable_body_config.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/fem/deformable_body_config.h) | 本构、默认参数及 damping setter 旧值检查差异 |
+| [multibody/mpm/BUILD.bazel](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/mpm/BUILD.bazel) | 内部 MPM 目标可见性及尚待公开的集成边界 |
+| [multibody/mpm/mpm_model.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/mpm/mpm_model.h) | 内部 MPM 状态、backward-Euler 能量与对象归属 |
+| [multibody/plant/deformable_driver.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/plant/deformable_driver.cc) | free FEM、Schur complement 与接触后状态恢复 |
+| [multibody/plant/deformable_model.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/plant/deformable_model.cc) | double/discrete/SAP 约束与柔性时间积分 |
+| [multibody/plant/deformable_model.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/plant/deformable_model.h) | 注册、节点状态矩阵、约束与空模型标量转换 |
+| [multibody/plant/propeller.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/plant/propeller.h) | 原生推力/反扭矩模型、端口与无状态边界 |
+| [multibody/plant/wing.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/plant/wing.h) | 平板气水翼系数、空间力输入输出及单位 |
+| [multibody/tree/deformable_body.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/tree/deformable_body.cc) | FEM 单元、本构和离散 q/v/a 状态装配 |
+| [multibody/tree/force_density_field.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/tree/force_density_field.h) | 体积力场的 Context 资源及参考体积重力 |
+| [multibody/tree/force_element.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/tree/force_element.h) | 刚体力、能量、功率与 scalar clone 扩展责任 |
+| [planning/trajectory_optimization/direct_collocation.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/planning/trajectory_optimization/direct_collocation.cc) | 连续状态和 abstract 输入的实际拒绝点 |
+| [planning/trajectory_optimization/direct_collocation.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/planning/trajectory_optimization/direct_collocation.h) | 配点假设、AutoDiff 与 Context/输入生命周期 |
+| [planning/trajectory_optimization/direct_transcription.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/planning/trajectory_optimization/direct_transcription.h) | 单周期离散或 Forward Euler 连续路径 |
+| [planning/trajectory_optimization/kinematic_trajectory_optimization.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/planning/trajectory_optimization/kinematic_trajectory_optimization.h) | B-spline 路径、时长与 qdot 约定 |
+| [solvers/mathematical_program_doxygen.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/solvers/mathematical_program_doxygen.h) | 优化程序对象与问题结构 |
+| [solvers/solve.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/solvers/solve.h) | MathematicalProgram 求解后端分派 |
+| [solvers/solver_interface.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/solvers/solver_interface.h) | available/enabled/问题属性与解成功的区别 |
+| [systems/framework/diagram.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/framework/diagram.cc) | 整图 scalar converter 能力交集 |
+| [systems/framework/scalar_conversion_traits.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/framework/scalar_conversion_traits.h) | 有向转换支持和丢失标量信息的边界 |
+| [systems/framework/system_scalar_conversion_doxygen.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/framework/system_scalar_conversion_doxygen.h) | System 转换、Context 复制和独立播种顺序 |
+| [systems/primitives/multilayer_perceptron.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/primitives/multilayer_perceptron.h) | 原生网络 Context 参数与解析 backprop |
