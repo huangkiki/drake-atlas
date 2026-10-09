@@ -334,6 +334,162 @@
     {
       "path": "bindings/pydrake/geometry/geometry_py_hydro.cc",
       "git_blob": "b1329d880ffa96a82619dc70fa51db6ae7208a9b"
+    },
+    {
+      "path": "bindings/pydrake/geometry/geometry_py_render.cc",
+      "git_blob": "da705d97b961844d193796304c79920b36f09afc"
+    },
+    {
+      "path": "bindings/pydrake/systems/sensors_py_accelerometer.cc",
+      "git_blob": "4c6a73bdf58d25b60f72123a39e245a887def0af"
+    },
+    {
+      "path": "bindings/pydrake/systems/sensors_py_gyroscope.cc",
+      "git_blob": "944b787aac84823747c6929dff5bf2dd29257fe8"
+    },
+    {
+      "path": "bindings/pydrake/systems/sensors_py_image.cc",
+      "git_blob": "8d9e891a3462e63b083266d5655b88d17162e671"
+    },
+    {
+      "path": "bindings/pydrake/systems/sensors_py_rgbd.cc",
+      "git_blob": "85901d4b51e08e1b959dacbd353620647afcac05"
+    },
+    {
+      "path": "geometry/geometry_state.cc",
+      "git_blob": "a7687f32cbad7cf2502ca5ebfd471860a4a8bf22"
+    },
+    {
+      "path": "geometry/meshcat.h",
+      "git_blob": "59b9aa315f6fdde9d0e250f503a6c4c9a067cf6d"
+    },
+    {
+      "path": "geometry/meshcat_visualizer.cc",
+      "git_blob": "231202f9869c7df375d9887fdfeb05fd9ec75e7d"
+    },
+    {
+      "path": "geometry/meshcat_visualizer_params.h",
+      "git_blob": "b84811672a5fd50cd809168cfe806d3102b26551"
+    },
+    {
+      "path": "geometry/query_object.cc",
+      "git_blob": "82df7eaacac1be13c158436b64570920f1399a9e"
+    },
+    {
+      "path": "geometry/render/render_camera.h",
+      "git_blob": "1203241b94a3d911a7166d6d86c386f44fdab5b8"
+    },
+    {
+      "path": "geometry/render/render_engine.h",
+      "git_blob": "1719a072f9371529a8740f85b6c2b8e5815c30d0"
+    },
+    {
+      "path": "geometry/render/render_label.h",
+      "git_blob": "c073200a06d55025ca4436afffd080744497499e"
+    },
+    {
+      "path": "geometry/render_vtk/render_engine_vtk_params.cc",
+      "git_blob": "09e65fed25d78f9751ff221001c3dd4f688b511c"
+    },
+    {
+      "path": "geometry/render_vtk/render_engine_vtk_params.h",
+      "git_blob": "7ed56d95ccc01c4f87a72428755d56ddc92e40a8"
+    },
+    {
+      "path": "multibody/math/spatial_acceleration.h",
+      "git_blob": "e056fa3bc87e46f67b6d77f8baaa0589877d5428"
+    },
+    {
+      "path": "perception/depth_image_to_point_cloud.cc",
+      "git_blob": "2703e040cd2ac69a62e7268ea1f93bc46bc04467"
+    },
+    {
+      "path": "perception/depth_image_to_point_cloud.h",
+      "git_blob": "40d0a0aa2c54e6cd07fa882403492c1508d92b26"
+    },
+    {
+      "path": "systems/primitives/zero_order_hold.cc",
+      "git_blob": "6a7ec3549b89df8b76b5f7df58c833d7581361b1"
+    },
+    {
+      "path": "systems/sensors/accelerometer.cc",
+      "git_blob": "09f839a6dabab229254c6fa8a5f900d2cb3f1e85"
+    },
+    {
+      "path": "systems/sensors/accelerometer.h",
+      "git_blob": "aa8828da577c8d67d5d85a442fff7c7cdea76f9d"
+    },
+    {
+      "path": "systems/sensors/camera_config.h",
+      "git_blob": "3c91825cc733a77a09b1817fdc557b2f384ddff2"
+    },
+    {
+      "path": "systems/sensors/camera_config_functions.cc",
+      "git_blob": "003c46e298991203182037e0451381b9d9ba4c0d"
+    },
+    {
+      "path": "systems/sensors/camera_info.cc",
+      "git_blob": "0f24a4214c0164cc1f19e2a7dad9212b5c3ba074"
+    },
+    {
+      "path": "systems/sensors/camera_info.h",
+      "git_blob": "c3e5ed3eb6ff1f26c96b122c649b962677b31791"
+    },
+    {
+      "path": "systems/sensors/gyroscope.cc",
+      "git_blob": "a85adcbbb71b82a99012171587dc9bb8c317ce60"
+    },
+    {
+      "path": "systems/sensors/gyroscope.h",
+      "git_blob": "467c3561477cb9511a1fcb5c9a05ed94c76fa014"
+    },
+    {
+      "path": "systems/sensors/image.cc",
+      "git_blob": "c1bc4bbcbda2295e3428811bcba5774128094314"
+    },
+    {
+      "path": "systems/sensors/image.h",
+      "git_blob": "aeb0973260db1a2ceb6144835612ccb2689b31b9"
+    },
+    {
+      "path": "systems/sensors/pixel_types.h",
+      "git_blob": "bb7e160fee0c2a9d527e73f32ebec46bf4a1ba56"
+    },
+    {
+      "path": "systems/sensors/rgbd_sensor.cc",
+      "git_blob": "a74080b359d24ec8272779f076baa6cfd7933257"
+    },
+    {
+      "path": "systems/sensors/rgbd_sensor.h",
+      "git_blob": "d9de9a664ff44afe5a5f0a3ee54c4606d0d3d873"
+    },
+    {
+      "path": "systems/sensors/rgbd_sensor_async.cc",
+      "git_blob": "599057e8c2d2fcb505804d70b4b72f77ab1bfb86"
+    },
+    {
+      "path": "systems/sensors/rgbd_sensor_async.h",
+      "git_blob": "a6e8b331f1a66ee63caf0634b55dfb46fda17e6f"
+    },
+    {
+      "path": "systems/sensors/rgbd_sensor_discrete.cc",
+      "git_blob": "c3384661d931536236ae1b2252dd205dabb7e08f"
+    },
+    {
+      "path": "systems/sensors/rgbd_sensor_discrete.h",
+      "git_blob": "5e4ba74a08f80fb91a3ebdc6344293afdb1d0f98"
+    },
+    {
+      "path": "systems/sensors/rotary_encoders.cc",
+      "git_blob": "2a29a9ac35b756c004d2f87b47797b4fb9960c61"
+    },
+    {
+      "path": "systems/sensors/rotary_encoders.h",
+      "git_blob": "2a0999601381d4950bde98c3717bae93fa1d5436"
+    },
+    {
+      "path": "systems/sensors/sim_rgbd_sensor.cc",
+      "git_blob": "2bd057653f72d35f0eecbc6a2a25d9a1900c3e1e"
     }
   ]
 }

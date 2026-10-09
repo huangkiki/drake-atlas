@@ -110,3 +110,49 @@
 | [multibody/plant/point_pair_contact_info.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/plant/point_pair_contact_info.h) | B 侧力、点、分离与 slip speed |
 | [bindings/pydrake/geometry/geometry_py_common.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/bindings/pydrake/geometry/geometry_py_common.cc) | Python 材料/geometry property 接口 |
 | [bindings/pydrake/geometry/geometry_py_hydro.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/bindings/pydrake/geometry/geometry_py_hydro.cc) | Python hydroelastic 属性重载 |
+
+## E4：传感器、渲染与时间合同
+
+固定版本下的相机、图像绑定、时间事件、理想惯性和显示链；文档已交付、原生运行未执行。复用前期 QueryObject/SceneGraph、MultibodyPlant、SpatialForce 和 ZeroOrderHold 声明文件。新增引用如下：
+
+| 固定文件 | 阅读目的 |
+|---|---|
+| [bindings/pydrake/geometry/geometry_py_render.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/bindings/pydrake/geometry/geometry_py_render.cc) | camera、VTK 参数和 factory Python 绑定 |
+| [bindings/pydrake/systems/sensors_py_accelerometer.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/bindings/pydrake/systems/sensors_py_accelerometer.cc) | 重力默认和缺失 AddToDiagram 绑定 |
+| [bindings/pydrake/systems/sensors_py_gyroscope.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/bindings/pydrake/systems/sensors_py_gyroscope.cc) | gyro Python 端口与 helper 边界 |
+| [bindings/pydrake/systems/sensors_py_image.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/bindings/pydrake/systems/sensors_py_image.cc) | HWC NumPy 视图和引用所有权 |
+| [bindings/pydrake/systems/sensors_py_rgbd.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/bindings/pydrake/systems/sensors_py_rgbd.cc) | 相机和内参 Python 重载 |
+| [geometry/geometry_state.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/geometry/geometry_state.cc) | camera world pose、按 renderer_name 分派与 viewpoint 更新 |
+| [geometry/meshcat.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/geometry/meshcat.h) | 服务、线程、Flush 和 StaticHtml 的边界 |
+| [geometry/meshcat_visualizer.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/geometry/meshcat_visualizer.cc) | publish/初始化事件及录制实现 |
+| [geometry/meshcat_visualizer_params.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/geometry/meshcat_visualizer_params.h) | publish period、role、prefix 与 hydro 网格 |
+| [geometry/query_object.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/geometry/query_object.cc) | 渲染前更新 pose/configuration 和分派 |
+| [geometry/render/render_camera.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/geometry/render/render_camera.h) | 光学 pose、clipping 与有效深度区间 |
+| [geometry/render/render_engine.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/geometry/render/render_engine.h) | 渲染输出与 label 注册合同 |
+| [geometry/render/render_label.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/geometry/render/render_label.h) | label 语义、保留值与用户映射 |
+| [geometry/render_vtk/render_engine_vtk_params.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/geometry/render_vtk/render_engine_vtk_params.cc) | 平台默认与不支持 backend 回落 |
+| [geometry/render_vtk/render_engine_vtk_params.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/geometry/render_vtk/render_engine_vtk_params.h) | VTK backend 字段和显示限制 |
+| [multibody/math/spatial_acceleration.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/math/spatial_acceleration.h) | 刚性安装点的空间加速度平移 |
+| [perception/depth_image_to_point_cloud.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/perception/depth_image_to_point_cloud.cc) | 反投影、列序、float32 和无效值实现 |
+| [perception/depth_image_to_point_cloud.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/perception/depth_image_to_point_cloud.h) | 类型、scale、可选 pose 与无效点合同 |
+| [systems/primitives/zero_order_hold.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/primitives/zero_order_hold.cc) | 向量/abstract 状态与更新事件 |
+| [systems/sensors/accelerometer.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/sensors/accelerometer.cc) | 加速度平移、减重力及 C++ 接线 |
+| [systems/sensors/accelerometer.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/sensors/accelerometer.h) | 比力、body/frame 与默认重力 |
+| [systems/sensors/camera_config.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/sensors/camera_config.h) | renderer 类型与配置身份 |
+| [systems/sensors/camera_config_functions.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/sensors/camera_config_functions.cc) | 连续/Async 分支与 LCM publish offset |
+| [systems/sensors/camera_info.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/sensors/camera_info.cc) | 内参验证与 FOV 转换 |
+| [systems/sensors/camera_info.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/sensors/camera_info.h) | 针孔、像素中心、光学坐标 |
+| [systems/sensors/gyroscope.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/sensors/gyroscope.cc) | 旋转表达及端口依赖 |
+| [systems/sensors/gyroscope.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/sensors/gyroscope.h) | 角速度定义、安装方向和理想模型 |
+| [systems/sensors/image.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/sensors/image.cc) | 32F/16U 单位、截断与无效值转换 |
+| [systems/sensors/image.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/sensors/image.h) | 像素存储、尺寸和 resize |
+| [systems/sensors/pixel_types.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/sensors/pixel_types.h) | 各像素类型与哨兵常量 |
+| [systems/sensors/rgbd_sensor.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/sensors/rgbd_sensor.cc) | 参数、渲染调用、pose 与 image_time |
+| [systems/sensors/rgbd_sensor.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/sensors/rgbd_sensor.h) | frame、图像端口及构造合同 |
+| [systems/sensors/rgbd_sensor_async.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/sensors/rgbd_sensor_async.cc) | worker 捕获、几何版本、future 和输出 |
+| [systems/sensors/rgbd_sensor_async.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/sensors/rgbd_sensor_async.h) | capture/output 时序、参数和线程限制 |
+| [systems/sensors/rgbd_sensor_discrete.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/sensors/rgbd_sensor_discrete.cc) | ZOH 接线与 image_time 导出差异 |
+| [systems/sensors/rgbd_sensor_discrete.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/sensors/rgbd_sensor_discrete.h) | 离散相机声明与更新时间 |
+| [systems/sensors/rotary_encoders.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/sensors/rotary_encoders.cc) | offset、floor 量化与参数 |
+| [systems/sensors/rotary_encoders.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/sensors/rotary_encoders.h) | rad、选择/量化、采样边界 |
+| [systems/sensors/sim_rgbd_sensor.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/sensors/sim_rgbd_sensor.cc) | 连续 sensor 与消息发布原生接线 |

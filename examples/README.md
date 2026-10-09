@@ -27,3 +27,7 @@ python -c "import ast; from pathlib import Path; ast.parse(Path('examples/model_
 ## E3：接触配置与原生字段读回
 
 [contact_inspection.py](contact_inspection.py) 明确配置原创 sphere/ground、point 与 hydro 材料、Lagged 近似和 sampled 输出。独立 reader 保留 point 的 B 侧力、hydro 的 A 侧 wrench、作用点、几何/刚体身份与 query time，不伪造物理 sample time。main 只包含建模步骤，不调用 reader；本轮连这些建模步骤也未执行，只做 AST、源码和球惯量静态检查。它不是接触实验或触觉传感器，详见[E3 验证](../docs/evidence/e3-validation.md)。
+
+## E4：相机的显式采样与时标
+
+[sampled_camera.py](sampled_camera.py) 使用原创锚定球体、SceneGraph perception role、命名 VTK renderer、RGB-D 相机和三个原生 ZeroOrderHold，仅保持 depth32F、X_WB 与正确连接的 capture_time。固定版本的 RgbdSensorDiscrete 时间端口导出差异见[时序篇](../docs/sensor-timing.md)。函数未执行；甚至 renderer 构造、Diagram 构建和 Context 创建都没有运行，不存在输出图片。初始 ZOH 零值不是已经捕获的图像；需要将来有授权的事件执行才产生样本。相机 body 与 depth frame 在该例中重合，移动/偏置相机需另外核对捕获时外参。[E4 验证](../docs/evidence/e4-validation.md)。

@@ -12,7 +12,7 @@
 | A3 | 驱动与控制 | 状态设置与控制命令、驱动器、饱和、PD、回调与控制频率 | [E2 已交付](control-robotics.md)，未运行 |
 | A4 | 接触 API | 碰撞过滤、接触观测、摩擦/恢复/柔顺参数的原生语义 | [E3 已交付](contact-models.md)，未运行 |
 | A5 | 机器人与运动学 | 模型导入、关节映射、FK/IK、限位、约束、外部控制集成 | [E2 已交付](control-robotics.md)，未运行 |
-| A6 | 传感器与渲染 | RGB/depth/分割/射线/力/触觉、坐标/单位/更新阶段、GUI/headless | 专题待开发 |
+| A6 | 传感器与渲染 | RGB/depth/分割/射线/力/触觉、坐标/单位/更新阶段、GUI/headless | [E4 已交付](sensors-rendering.md)，含[时间](sensor-timing.md)和[惯性/力](inertial-force-sensing.md)；未运行 |
 | A7 | 任务编排 | 接近/闭合/保持/释放的控制接口与状态机设计，后续引用 DexLab 案例 | [E2 已交付](task-interfaces.md)；实验案例后续复用 DexLab |
 | A8 | 并行与学习接口 | CPU/GPU、批量隔离、reset/step、终止/截断、随机种子和官方学习接口 | 专题待开发 |
 | A9 | 数据与 sim-to-real | 状态/观测导出、时间戳、元数据、回放、随机化及模型差距 | 专题待开发 |
@@ -31,4 +31,6 @@ E1 的“已交付”指源码教学及静态验证，不代表原生运行；�
 
 E2 完成原生控制、运动学/IK 与任务事件接口讲解；三个示例只做静态验证，未执行控制、优化或任务。接触/传感的实际观测语义分别由 E3/E4 深入，DexLab 案例整合留在 E7。[E2 证据](evidence/e2-validation.md)。
 
-E3 已交付 A4、B1–B5 及 B0 装配基础，包含 22 道练习与原生配置/读回例子。实际物理、梯度与实验验收没有开展；原生传感器专题仍由 E4 负责。[E3 证据](evidence/e3-validation.md)。
+E3 已交付 A4、B1–B5 及 B0 装配基础，包含 22 道练习与原生配置/读回例子。实际物理、梯度与实验验收没有开展；原生传感器的采样、图像与理想惯性模型现由 E4 展开。[E3 证据](evidence/e3-validation.md)。
+
+E4 完成 A6：RGB-D/label/点云、QueryObject 与 renderer、三种相机时间模型、Meshcat/headless、Accelerometer/Gyroscope/RotaryEncoders，以及力/触觉边界，含 21 道有答案练习。射线与触觉明确说明当前原生链提供什么、缺少哪些硬件模型；没有用历史 API、消息类型或压力截图代替实现。示例只做静态检查。[E4 证据](evidence/e4-validation.md)。

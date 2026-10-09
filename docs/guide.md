@@ -43,3 +43,5 @@ Drake 的 double、AutoDiff 和 symbolic 标量支持按组件与配置区分。
 实验最终复用 [DexLab](https://github.com/huangkiki/Dexlab) 并保留原版本、配置和工况；当前不另建实验批次或评分器。
 
 完整接触专题：[几何与材料](contact-models.md) → [SAP、时间离散与终止](contact-solvers.md) → [力与采样](contact-observation.md)。
+
+E4 继续追踪[相机、图像与渲染](sensors-rendering.md)、[采样、延迟与所有权](sensor-timing.md)和[惯性/编码器/力观测](inertial-force-sensing.md)。显示事件与物理步进、图像深度与射线距离、加速度与比力分别解释；保持固定源码及未运行边界。
