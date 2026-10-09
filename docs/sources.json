@@ -130,6 +130,114 @@
     {
       "path": "systems/framework/system.h",
       "git_blob": "33e76a3da565e9f8c4797a59d48a7a97af062ceb"
+    },
+    {
+      "path": "bindings/pydrake/multibody/inverse_kinematics_py.cc",
+      "git_blob": "62bf21413ba2c7efc24ea32b6e45736a43b06063"
+    },
+    {
+      "path": "bindings/pydrake/systems/controllers_py.cc",
+      "git_blob": "30c8bdc6693cc2972767cc34bc59f0ddf7e1a12a"
+    },
+    {
+      "path": "bindings/pydrake/systems/framework_py_values.cc",
+      "git_blob": "db325219b32797eb28dfd79b50ff8db6d9ccf400"
+    },
+    {
+      "path": "bindings/pydrake/systems/primitives_py.cc",
+      "git_blob": "8e6d5951511bb27515d4eca9bd021622f4ddeb48"
+    },
+    {
+      "path": "multibody/inverse_kinematics/add_multibody_plant_constraints.h",
+      "git_blob": "59fade7c00fbd8ea90a954fc7a91f0b56e50ee4b"
+    },
+    {
+      "path": "multibody/inverse_kinematics/differential_inverse_kinematics.h",
+      "git_blob": "80933f36f120b308401234944dc84d12e37f8462"
+    },
+    {
+      "path": "multibody/inverse_kinematics/differential_inverse_kinematics_system.h",
+      "git_blob": "cb8d8ec7851e3bb1a011b12cb395cbcaddc021eb"
+    },
+    {
+      "path": "multibody/inverse_kinematics/inverse_kinematics.cc",
+      "git_blob": "e2f4f35607122eb88fadada35af97edfa08e5812"
+    },
+    {
+      "path": "multibody/inverse_kinematics/inverse_kinematics.h",
+      "git_blob": "556fb0b2bb8f409b8ddae1060fcdcf9f004a8ac7"
+    },
+    {
+      "path": "multibody/parsing/detail_urdf_parser.cc",
+      "git_blob": "c413e555e86554825f377269e3f3d602fd3f4583"
+    },
+    {
+      "path": "multibody/plant/externally_applied_spatial_force.h",
+      "git_blob": "06774c65da23890ec6980b37dfdd52e59bc4e741"
+    },
+    {
+      "path": "multibody/plant/sap_driver.cc",
+      "git_blob": "c8414aee36c3ae509ad0a2d2f0afa06abbed2e95"
+    },
+    {
+      "path": "multibody/tree/joint_actuator.cc",
+      "git_blob": "1e07b358ce79e9cb97f6e439d7dbf97e1019c3ed"
+    },
+    {
+      "path": "multibody/tree/joint_actuator.h",
+      "git_blob": "8231b0bcaa17d9fe85d8e806996d9af53e5cbf71"
+    },
+    {
+      "path": "solvers/mathematical_program.h",
+      "git_blob": "b943ea59dfa71da55190c273f954a853ac7e89eb"
+    },
+    {
+      "path": "solvers/mathematical_program_result.h",
+      "git_blob": "f3b0e0c97658222cfd00cfc357973391cc3676d4"
+    },
+    {
+      "path": "systems/controllers/inverse_dynamics.h",
+      "git_blob": "d42caecc4de567a59685a85888b06e1fc4f8dda9"
+    },
+    {
+      "path": "systems/controllers/inverse_dynamics_controller.h",
+      "git_blob": "bff4c0fc13264fdf2c284e8ea890e0789311173f"
+    },
+    {
+      "path": "systems/controllers/pid_controller.h",
+      "git_blob": "64410a8bc648c5a41c0744553cd5903f0f57adca"
+    },
+    {
+      "path": "systems/framework/input_port.h",
+      "git_blob": "501386522689234fd93b20cd68fc5e2f85076170"
+    },
+    {
+      "path": "systems/framework/leaf_system.h",
+      "git_blob": "2c2a68afabdd099352729a26244c266478675bcf"
+    },
+    {
+      "path": "systems/primitives/saturation.h",
+      "git_blob": "a93615fb30451b0f1a0764b0915046eb53b449a1"
+    },
+    {
+      "path": "systems/primitives/zero_order_hold.h",
+      "git_blob": "dd895630314a515d9a10b33de0806c21dbb1c79e"
+    },
+    {
+      "path": "bindings/pydrake/trajectories_py.cc",
+      "git_blob": "bb15283a386ddabfc70a24e0d6d8bde134192fc3"
+    },
+    {
+      "path": "common/trajectories/piecewise_polynomial.h",
+      "git_blob": "ad38da313b5f7dd93964e23d0c32f0e083af55f5"
+    },
+    {
+      "path": "systems/primitives/trajectory_source.cc",
+      "git_blob": "e992c174208b461212b468c39168e8e0729fdfc1"
+    },
+    {
+      "path": "systems/primitives/trajectory_source.h",
+      "git_blob": "18fa848396b83964c974013487d78987acb461bf"
     }
   ]
 }

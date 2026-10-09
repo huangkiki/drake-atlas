@@ -45,3 +45,37 @@
 | [systems/framework/diagram_builder.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/framework/diagram_builder.h) | Build 的单次使用与系统所有权 |
 | [systems/framework/system.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/framework/system.cc) | SetDefaultContext 实际重置的字段 |
 | [systems/framework/system.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/framework/system.h) | 子 Context 获取、默认状态及输入复制 API |
+
+## E2：驱动、机器人与任务接口
+
+专题：[驱动与机器人](control-robotics.md) → [任务接口](task-interfaces.md)。原生输入到输出/事件的引用范围见正文及[E2 验证](evidence/e2-validation.md)，本次新增以下固定文件。
+
+| 文件 | E2 阅读目的 |
+|---|---|
+| [bindings/pydrake/multibody/inverse_kinematics_py.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/bindings/pydrake/multibody/inverse_kinematics_py.cc) | Python IK Context 重载与位置约束参数 |
+| [bindings/pydrake/systems/controllers_py.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/bindings/pydrake/systems/controllers_py.cc) | PID 的 Python 参数和端口名 |
+| [bindings/pydrake/systems/framework_py_values.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/bindings/pydrake/systems/framework_py_values.cc) | BasicVector 副本与数值访问 |
+| [bindings/pydrake/systems/primitives_py.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/bindings/pydrake/systems/primitives_py.cc) | Saturation 与 ZeroOrderHold Python 参数 |
+| [multibody/inverse_kinematics/add_multibody_plant_constraints.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/inverse_kinematics/add_multibody_plant_constraints.h) | 关节/四元数/闭链等约束及硬软距离区别 |
+| [multibody/inverse_kinematics/differential_inverse_kinematics.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/inverse_kinematics/differential_inverse_kinematics.h) | 经典微分 IK 的 N(q)、速度/加速度限制和 stuck |
+| [multibody/inverse_kinematics/differential_inverse_kinematics_system.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/inverse_kinematics/differential_inverse_kinematics_system.h) | Systems 微分 IK 的端口与 v=qdot 限制 |
+| [multibody/inverse_kinematics/inverse_kinematics.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/inverse_kinematics/inverse_kinematics.cc) | IK 模型约束装配与关闭 joint-limit 的实际范围 |
+| [multibody/inverse_kinematics/inverse_kinematics.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/inverse_kinematics/inverse_kinematics.h) | IK 约束、Context 所有权/修改与碰撞前置条件 |
+| [multibody/parsing/detail_urdf_parser.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/parsing/detail_urdf_parser.cc) | URDF transmission 与 actuator 的创建 |
+| [multibody/plant/externally_applied_spatial_force.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/plant/externally_applied_spatial_force.h) | 作用点在 B 表达、空间力在 world 表达 |
+| [multibody/plant/sap_driver.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/plant/sap_driver.cc) | PD + 前馈联合限额、SAP 净驱动读回 |
+| [multibody/tree/joint_actuator.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/tree/joint_actuator.cc) | 增益有限性、非负约束与关闭 controller |
+| [multibody/tree/joint_actuator.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/multibody/tree/joint_actuator.h) | actuator 输入位置、限额、增益与公开适用模式 |
+| [solvers/mathematical_program.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/solvers/mathematical_program.h) | IK 二次代价、初值接口 |
+| [solvers/mathematical_program_result.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/solvers/mathematical_program_result.h) | 优化结果成功状态、解与约束诊断 |
+| [systems/controllers/inverse_dynamics.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/controllers/inverse_dynamics.h) | inverse dynamics 力项和重力补偿 |
+| [systems/controllers/inverse_dynamics_controller.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/controllers/inverse_dynamics_controller.h) | 加速度反馈、完全驱动假设和模型参数 Context |
+| [systems/controllers/pid_controller.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/controllers/pid_controller.h) | PID 状态、维度、反馈与投影 |
+| [systems/framework/input_port.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/framework/input_port.h) | Eval、FixValue 的覆盖与复制 |
+| [systems/framework/leaf_system.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/framework/leaf_system.h) | 离散 State、周期事件和输出依赖声明 |
+| [systems/primitives/saturation.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/primitives/saturation.h) | 逐元素限额与 direct feedthrough |
+| [systems/primitives/zero_order_hold.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/primitives/zero_order_hold.h) | 保持状态、首次采样及初始化 |
+| [bindings/pydrake/trajectories_py.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/bindings/pydrake/trajectories_py.cc) | 三次轨迹 Python 重载与参数 |
+| [common/trajectories/piecewise_polynomial.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/common/trajectories/piecewise_polynomial.h) | 三次路径插值、样本列和端点导数 |
+| [systems/primitives/trajectory_source.cc](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/primitives/trajectory_source.cc) | Context 时间求值、堆叠顺序及区间外导数 |
+| [systems/primitives/trajectory_source.h](https://github.com/RobotLocomotion/drake/blob/1e1466ba466e7ce8fa9fcca4e086ce1383e5427d/systems/primitives/trajectory_source.h) | 轨迹输出阶数与 System 所有权 |
